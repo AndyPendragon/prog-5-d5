@@ -1,12 +1,58 @@
-Github du binome : 
-https://github.com/JeanMarc-RAJAONARIVELONA/prog-5-d5
+# Coffee Machine CLI
 
-![image](https://github.com/user-attachments/assets/eed1bda7-89d0-46e6-b48f-520f718486e7)
+A simple CLI application simulating a coffee machine, built with Deno and TypeScript.
 
-<details>
-  <summary>Excalidraw Clipboard content</summary>
-  
-  ```javascript
-  {"type":"excalidraw/clipboard","elements":[{"id":"hi5nDFBXZ1wnZvizZlQoJ","type":"text","x":359,"y":223,"width":706.4500122070312,"height":650,"angle":0,"strokeColor":"#1e1e1e","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":2,"strokeStyle":"solid","roughness":1,"opacity":100,"groupIds":[],"frameId":null,"index":"a0","roundness":null,"seed":1235167510,"version":1223,"versionNonce":605513558,"isDeleted":false,"boundElements":null,"updated":1748329014875,"link":null,"locked":false,"text":"github.com/AndyPendragon/prog-5-d5\n\nCoffeeDistributor\n\n//transactional\npayWithCard(card: Card, amount: number): StatusCode{\n    if (card.balance() - amount < 0){return balanceInsufficientException}\n    \n    try{\n    debitCard(amount, card.accountNumber)\n    return StatusCode.OK\n    } catch {\n    console.error(exception Exception)\n    }\n}\n\nchooseCoffee(choiceID: number) {\n    //enoughWater\n    displayCoffeeAvailable()\n    submitChoice()\n}\n\ndeliverCoffee() {\n    isCupPlaced()\n    enableRobinet()\n}","fontSize":20,"fontFamily":5,"textAlign":"left","verticalAlign":"top","containerId":null,"originalText":"github.com/AndyPendragon/prog-5-d5\n\nCoffeeDistributor\n\n//transactional\npayWithCard(card: Card, amount: number): StatusCode{\n    if (card.balance() - amount < 0){return balanceInsufficientException}\n    \n    try{\n    debitCard(amount, card.accountNumber)\n    return StatusCode.OK\n    } catch {\n    console.error(exception Exception)\n    }\n}\n\nchooseCoffee(choiceID: number) {\n    //enoughWater\n    displayCoffeeAvailable()\n    submitChoice()\n}\n\ndeliverCoffee() {\n    isCupPlaced()\n    enableRobinet()\n}","autoResize":true,"lineHeight":1.25}],"files":{}}
-  ```
-</details>
+## Features
+
+- Choose from multiple coffee drinks (Espresso, Cappuccino, Americano, Latte)
+- Customize your drink (sugar, milk)
+- Pay using different payment methods (Card implemented)
+- Simple CLI prompts for user interaction
+
+## Project Structure
+
+```
+deno.json
+main.ts
+README.md
+src/
+  domain/
+    Drink.ts
+    PaymentMethod.ts
+  interfaces/
+    CoffeeMachineCLI.ts
+  services/
+    CardPayment.ts
+  useCases/
+    BuyCoffeeUseCase.ts
+```
+## Prerequisites
+
+[Deno](https://deno.com/manual/getting_started/installation) must be installed on your system.
+
+## Usage
+
+Run the CLI with Deno:
+
+```sh
+deno run main.ts
+```
+
+## How it works
+
+1. Select a payment method (currently only Card is implemented).
+2. Scan your payment method and confirm payment.
+3. Choose your coffee drink and customize it.
+4. Receive your coffee and a thank you message.
+
+## Implementation
+
+- Business logic is in [`src/useCases/BuyCoffeeUseCase.ts`](src/useCases/BuyCoffeeUseCase.ts)
+- Payment method interface and types in [`src/domain/PaymentMethod.ts`](src/domain/PaymentMethod.ts)
+- Drink model in [`src/domain/Drink.ts`](src/domain/Drink.ts)
+- Card payment implementation in [`src/services/CardPayment.ts`](src/services/CardPayment.ts)
+- CLI logic in [`src/interfaces/CoffeeMachineCLI.ts`](src/interfaces/CoffeeMachineCLI.ts)
+
+## Repository
+
+[https://github.com/JeanMarc-RAJAONARIVELONA/prog-5-d5](https://github.com/JeanMarc-RAJAONARIVELONA/prog-5-d5)
